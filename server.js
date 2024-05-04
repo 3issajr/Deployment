@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
+const serverless = require("serverless-http");
 const userRouter = require('./routes/userRoutes')
 const adminRouter = require('./routes/adminRoutes')
 
@@ -24,7 +25,8 @@ app.use(
     })
 )
 
-app.use("/.netlify/functions/app", router);
+app.use("/.netlify/functions/app/user", userRouter);
+app.use("/.netlify/functions/app/admin", adminRouter);
 module.exports.handler = serverless(app);
 
 app.use(function (req, res, next) {
