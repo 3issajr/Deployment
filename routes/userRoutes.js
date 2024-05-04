@@ -6,7 +6,7 @@ const authController = require('../controllers/authController')
 const contactController = require('../controllers/contactController')
 const bookController = require('../controllers/bookController')
 const menuController = require('../controllers/menuController')
-const requireAuth = require('../middlewares/authMiddleware')
+const requireAuth = require('../Middlewares/authMiddleware')
 
 
 
